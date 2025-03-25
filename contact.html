@@ -225,26 +225,31 @@
 
 	<!-- Google map -->
 
-	<script async defer
-    src="https://maps.googleapis.com/maps/api/js?
-		key=AIzaSyCy6TqPsb9IY9yM0hOBnm06hnKwNG7TeW8&callback=initMap">
-	</script>
+	<script async defer 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy6TqPsb9IY9yM0hOBnm06hnKwNG7TeW8&callback=initMap">
+    </script>
 
 	<script>
-	function initMap() {
-		var dumbo = {lat:13.876513212261727, lng: 121.0922763233851};
-		var mapOptions = {
-			center: dumbo,
-			zoom: 6         
-		};
-		var googlemap = new google.maps.Map(document.getElementById("google-map"), mapOptions);
-		var marker = new google.maps.Marker({
-                position: dumbo, // marker pointing to the location.
+        function initMap() {
+            // Define location coordinates
+            var dumbo = { lat: 13.876513212261727, lng: 121.0922763233851 };
+
+            // Map options
+            var mapOptions = {
+                center: dumbo,
+                zoom: 6
+            };
+
+            // Create map
+            var googlemap = new google.maps.Map(document.getElementById("google-map"), mapOptions);
+
+            // Add marker
+            var marker = new google.maps.Marker({
+                position: dumbo,
                 map: googlemap
             });
-	}
-
-	</script> 
+        }
+    </script>
 
 	<style>
 	#google-map{
